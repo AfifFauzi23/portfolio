@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="pg0" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D9E0EC"/>
+      <stop offset="100%" stop-color="#BAC6DA"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#pg0)"/>
+  <rect x="128" y="100" width="1344" height="800" fill="none" stroke="#131720" stroke-opacity="0.12" stroke-width="1.5"/>
+  <circle cx="800" cy="460" r="160" fill="#1F3CFF" opacity="0.16"/>
+  <text x="800" y="520" text-anchor="middle" font-family="sans-serif" font-size="44" font-weight="600" fill="#131720" opacity="0.72">Karya 1 — UI/UX</text>
+  <text x="800" y="580" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#131720" opacity="0.45">1600 x 1000 — ganti dengan visual proyek</text>
+</svg>

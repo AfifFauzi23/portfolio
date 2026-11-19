@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1C2230"/>
+      <stop offset="100%" stop-color="#131720"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#pbg)"/>
+  <rect x="80" y="80" width="1440" height="740" fill="none" stroke="#F4F6F9" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="800" cy="450" r="180" fill="none" stroke="#6E8BFF" stroke-opacity="0.35" stroke-width="1.5"/>
+  <circle cx="800" cy="450" r="280" fill="none" stroke="#F4F6F9" stroke-opacity="0.08" stroke-width="1"/>
+  <text x="120" y="140" font-family="sans-serif" font-size="24" fill="#F4F6F9" opacity="0.5">Showreel 2026 — Afif Fauzi</text>
+  <text x="120" y="790" font-family="sans-serif" font-size="20" fill="#98A4B8" opacity="0.7">16:9 — 1920 x 1080 MP4</text>
+</svg>

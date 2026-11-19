@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f4f6f9;
+  --surface: #e8ecf2;
+  --surface-elevated: #ffffff;
+  --ink: #131720;
+  --muted: #556075;
+  --border: rgba(19, 23, 32, 0.12);
+  --accent: #1f3cff;
+  --accent-contrast: #ffffff;
+}
+
+.dark {
+  --bg: #131720;
+  --surface: #1c2230;
+  --surface-elevated: #232a3b;
+  --ink: #f4f6f9;
+  --muted: #98a4b8;
+  --border: rgba(244, 246, 249, 0.14);
+  --accent: #6e8bff;
+  --accent-contrast: #0f131c;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --font-display: var(--font-anybody), system-ui, sans-serif;
+  --font-sans: var(--font-ibm-plex-sans), system-ui, sans-serif;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ibm-plex-sans), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: auto; /* Lenis menangani smooth scrolling */
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  overflow-x: clip;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+/* Fokus keyboard yang jelas & konsisten untuk aksesibilitas */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Sembunyikan kursor bawaan hanya saat kursor kustom aktif di perangkat pointer presisi */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [role="button"] {
+    cursor: none;
+  }
+}
+
+/* Hormati prefers-reduced-motion secara menyeluruh */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilitas untuk menyembunyikan scrollbar di thumbnail strip tanpa merusak akses scroll */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
