@@ -32,7 +32,7 @@ export function Hero() {
   });
   const rafRef = useRef<number | null>(null);
 
-  const lines = [profileData.firstName, profileData.lastName];
+  const lines = profileData.heroHeadlineLines;
   const totalGlyphs = lines.reduce((acc, line) => acc + line.length, 0);
 
   useEffect(() => {
@@ -174,19 +174,16 @@ export function Hero() {
     >
       <div
         ref={stageRef}
-        className="select-none py-4 sm:py-6"
-        aria-label={profileData.name}
+        className="select-none py-6 sm:py-8"
+        aria-label={lines.join(" ")}
       >
-        <h1 className="font-display text-[clamp(3.75rem,14vw,11.5rem)] leading-[1.04] tracking-[-0.03em] text-ink">
+        <h1 className="font-display text-[clamp(2.75rem,10.5vw,8.75rem)] leading-[1.12] tracking-[-0.03em] text-ink">
           {lines.map((line, lineIdx) => (
-            <span
-              key={line}
-              className={`block overflow-hidden pt-4 pb-2 ${lineIdx > 0 ? "-mt-5 sm:-mt-7" : ""}`}
-            >
+            <span key={line} className="block overflow-visible">
               <motion.span
                 className="inline-flex flex-wrap"
-                initial={prefersReduced ? false : { y: "105%", opacity: 0 }}
-                animate={{ y: "0%", opacity: 1 }}
+                initial={prefersReduced ? false : { y: 24, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
                 transition={getSafeTransition(prefersReduced, {
                   duration: MOTION.duration.slow,
                   delay: lineIdx * 0.08,
@@ -195,18 +192,21 @@ export function Hero() {
               >
                 {line.split("").map((char, charIdx) => {
                   const currentIdx = glyphIndex++;
+                  const isSpace = char === " ";
                   return (
                     <span
                       key={`${lineIdx}-${charIdx}`}
                       ref={(el) => {
                         glyphRefs.current[currentIdx] = el;
                       }}
-                      className="inline-block will-change-transform"
+                      className={`inline-block will-change-transform ${
+                        isSpace ? "w-[0.28em]" : ""
+                      }`}
                       style={{
                         fontVariationSettings: `"wght" ${BASE_WGHT}, "wdth" ${BASE_WDTH}`,
                       }}
                     >
-                      {char}
+                      {isSpace ? "\u00A0" : char}
                     </span>
                   );
                 })}

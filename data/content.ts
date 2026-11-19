@@ -68,6 +68,7 @@ export const profileData = {
   name: "Afif Fauzi",
   firstName: "Afif",
   lastName: "Fauzi",
+  heroHeadlineLines: ["Hi, I'm", "Afif Fauzi"],
   // TODO: ganti dengan aset asli (/public/assets/profile/afif-profile.jpg atau .webp)
   avatar: "/assets/profile/afif-profile.svg",
   avatarAlt: "Potret Afif Fauzi di studio",
