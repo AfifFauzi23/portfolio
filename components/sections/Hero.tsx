@@ -177,9 +177,12 @@ export function Hero() {
         className="select-none py-4 sm:py-6"
         aria-label={profileData.name}
       >
-        <h1 className="font-display text-[clamp(3.75rem,14vw,11.5rem)] leading-[0.88] tracking-[-0.03em] text-ink">
+        <h1 className="font-display text-[clamp(3.75rem,14vw,11.5rem)] leading-[1.04] tracking-[-0.03em] text-ink">
           {lines.map((line, lineIdx) => (
-            <span key={line} className="block overflow-hidden py-1">
+            <span
+              key={line}
+              className={`block overflow-hidden pt-4 pb-2 ${lineIdx > 0 ? "-mt-5 sm:-mt-7" : ""}`}
+            >
               <motion.span
                 className="inline-flex flex-wrap"
                 initial={prefersReduced ? false : { y: "105%", opacity: 0 }}
